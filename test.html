@@ -133,7 +133,7 @@
 		//////////////////////////////////////////////////////////////////////////////////
 
 		var arWorldRoot = smoothedRoot
-		
+
 		var light = new THREE.AmbientLight(0xffffff);
 		arWorldRoot.add(light);
 
@@ -151,9 +151,9 @@
 			mesh.scale.multiplyScalar(0.003);
 			mesh.rotation.x = -90;
 		});
-		
+
 		onRenderFcts.push(function() {
-			mesh.rotation.x+=1;
+			mesh.rotation.x += 0.1
 		})
 
 		//////////////////////////////////////////////////////////////////////////////////
@@ -162,10 +162,10 @@
 		var stats = new Stats();
 		document.body.appendChild(stats.dom);
 		// render the scene
-		/*onRenderFcts.push(function() {
+		onRenderFcts.push(function() {
 			renderer.render(scene, camera);
 			stats.update();
-		})*/
+		})
 
 		// run the rendering loop
 		var lastTimeMsec = null
@@ -180,9 +180,9 @@
 			onRenderFcts.forEach(function(onRenderFct) {
 				onRenderFct(deltaMsec / 1000, nowMsec / 1000)
 			})
-			
-			renderer.render(scene, camera);
-			stats.update();
+
+			/*renderer.render(scene, camera);
+			stats.update();*/
 		})
 	</script>
 </body>
