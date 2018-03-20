@@ -14,6 +14,8 @@
 		<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - three.js mobile performance
 		<br/> Contact me any time at
 		<a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+
+		<div id="root"></div>
 	</div>
 	<script>
 		//////////////////////////////////////////////////////////////////////////////////
@@ -132,7 +134,10 @@
 		//		add an object in the scene
 		//////////////////////////////////////////////////////////////////////////////////
 
-		var arWorldRoot = smoothedRoot
+		var arWorldRoot = smoothedRoot;
+
+		var __rr = document.getElementById('root');
+		var radius = 0;
 
 		var light = new THREE.AmbientLight(0xffffff);
 		arWorldRoot.add(light);
@@ -149,10 +154,13 @@
 			mesh = new THREE.Mesh(geometry, a);
 			arWorldRoot.add(mesh);
 			mesh.scale.multiplyScalar(0.003);
-			mesh.rotation.x = 90;
+			mesh.rotation.x = radius;
 		});
 
 		onRenderFcts.push(function() {
+			radius++;
+			mesh.rotation.x = radius;
+			__rr.innerHTML = radius;
 			//mesh.rotation.x += 0.1
 		})
 
