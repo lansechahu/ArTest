@@ -142,10 +142,11 @@
 			var a = new THREE.MeshPhongMaterial({
 				map: texture
 			});
-			
+
 			mesh = new THREE.Mesh(geometry, a);
 			arWorldRoot.add(mesh);
-			mesh.scale.multiplyScalar(0.05);
+			mesh.scale.multiplyScalar(0.01);
+			mesh.rotation.x = 90;
 		});
 
 		//////////////////////////////////////////////////////////////////////////////////
