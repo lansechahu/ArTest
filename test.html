@@ -160,14 +160,6 @@
 		onRenderFcts.push(function() {
 			mesh.rotation.y += 0.01;
 		});
-		
-		var isIn = false;
-		onRenderFcts.push(function() {
-			if(isIn == true) return;
-
-			isIn = true;
-			alert('开始播放了');
-		});
 
 		//////////////////////////////////////////////////////////////////////////////////
 		//		render the whole thing on the page
