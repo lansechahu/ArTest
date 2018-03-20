@@ -151,6 +151,10 @@
 			mesh.scale.multiplyScalar(0.003);
 			mesh.rotation.x = -90;
 		});
+		
+		onRenderFcts.push(function() {
+			mesh.rotation.x+=1;
+		})
 
 		//////////////////////////////////////////////////////////////////////////////////
 		//		render the whole thing on the page
