@@ -158,10 +158,10 @@
 		var stats = new Stats();
 		document.body.appendChild(stats.dom);
 		// render the scene
-		onRenderFcts.push(function() {
+		/*onRenderFcts.push(function() {
 			renderer.render(scene, camera);
 			stats.update();
-		})
+		})*/
 
 		// run the rendering loop
 		var lastTimeMsec = null
@@ -176,6 +176,9 @@
 			onRenderFcts.forEach(function(onRenderFct) {
 				onRenderFct(deltaMsec / 1000, nowMsec / 1000)
 			})
+			
+			renderer.render(scene, camera);
+			stats.update();
 		})
 	</script>
 </body>
