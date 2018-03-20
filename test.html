@@ -133,6 +133,9 @@
 		//////////////////////////////////////////////////////////////////////////////////
 
 		var arWorldRoot = smoothedRoot
+		
+		var light = new THREE.AmbientLight(0xffffff);
+		arWorldRoot.add(light);
 
 		// add a torus knot	
 		var loader = new THREE.TextureLoader();
@@ -145,8 +148,8 @@
 
 			mesh = new THREE.Mesh(geometry, a);
 			arWorldRoot.add(mesh);
-			mesh.scale.multiplyScalar(0.01);
-			mesh.rotation.x = 90;
+			mesh.scale.multiplyScalar(0.003);
+			mesh.rotation.x = -90;
 		});
 
 		//////////////////////////////////////////////////////////////////////////////////
